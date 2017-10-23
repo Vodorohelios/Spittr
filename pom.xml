@@ -26,6 +26,7 @@
         <h2.version>1.4.182</h2.version>
         <hibernate.validator.version>5.0.1.Final</hibernate.validator.version>
         <jstl.version>1.2</jstl.version>
+        <maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
 
     </properties>
 
@@ -140,17 +141,27 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost.com:1234/mymanager</url>
                 </configuration>
             </plugin>
         </plugins>
