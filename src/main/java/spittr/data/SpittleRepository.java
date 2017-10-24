@@ -1,16 +1,17 @@
 package spittr.data;
 
-import org.springframework.stereotype.Repository;
-import spittr.Spittle;
-
 import java.util.List;
 
+import spittr.Spittle;
+
 public interface SpittleRepository {
-    List<Spittle> findRecentSpittles();
 
-    List<Spittle> findSpittles(long max, int count);
+  List<Spittle> findRecentSpittles();
 
-    Spittle findOne(long id);
+  List<Spittle> findSpittles(long max, int count);
+  
+  Spittle findOne(long id);
 
-    void save(Spittle spittle);
+  void save(Spittle spittle);
+
 }
