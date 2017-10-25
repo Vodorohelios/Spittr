@@ -5,7 +5,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -25,7 +24,6 @@ public class SpitterControllerTest {
   }
   
   @Test
-  @Ignore
   public void shouldProcessRegistration() throws Exception {
     SpitterRepository mockRepository = mock(SpitterRepository.class);
     Spitter unsaved = new Spitter("jbauer", "24hours", "Jack", "Bauer", "jbauer@ctu.gov");
@@ -47,7 +45,6 @@ public class SpitterControllerTest {
   }
 
   @Test
-  @Ignore
   public void shouldFailValidationWithNoData() throws Exception {
     SpitterRepository mockRepository = mock(SpitterRepository.class);    
     SpitterController controller = new SpitterController(mockRepository);
